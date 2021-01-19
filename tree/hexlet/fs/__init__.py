@@ -5,6 +5,8 @@
 __all__ = (   # noqa: WPS317
     'mkfile', 'mkdir',
     'is_file', 'is_directory',
+    'get_children', 'get_meta',
+    'get_name', 'flatten'
 )
 
 

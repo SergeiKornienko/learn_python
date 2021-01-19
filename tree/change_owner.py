@@ -1,3 +1,4 @@
+# example
 import copy
 from pprint import pprint
 from hexlet import fs
