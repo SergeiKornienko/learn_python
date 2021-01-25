@@ -1,8 +1,7 @@
-def make_module(step=1):
-    return {'inc': lambda x: x + step, 'dec': lambda x: x - step}
+from functions.make_module import make_module
 
 
-if __name__ == '__main__':
+def test_make_module():
     assert make_module()['inc'].__name__ == '<lambda>', (
         'Increment function should be the lambda!'
     )
