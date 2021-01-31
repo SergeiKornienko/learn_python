@@ -1,4 +1,4 @@
-from functions import triangle
+from functions.triangle import triangle
 
 
 def test_triangle():
