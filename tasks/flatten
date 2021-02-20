@@ -1,0 +1,11 @@
+Реализуйте функцию flatten, которая делает
+плоским вложенный список.
+
+Примеры
+>>> from solution import flatten
+>>> flatten([])
+[]
+>>> flatten([2, [3, 5], [[4, 3], 2]])
+[2, 3, 5, 4, 3, 2]
+>>>
+BEGIN (write your solution here)
