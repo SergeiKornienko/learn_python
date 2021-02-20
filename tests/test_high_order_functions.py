@@ -1,22 +1,10 @@
-from functools import reduce
-from operator import abs, getitem
+from functions.high_order_functions import abs_sum, keep_truthful, walk
+
+FALSES = (False, (), None, '', 0)
+TRUTHS = (True, (1,), '!', -5)
 
 
-def keep_truthful(items):
-    return filter(None, items)
-
-
-def abs_sum(list_nums):
-    return sum(map(abs, list_nums))
-
-
-def walk(data, path):
-    return reduce(getitem, path, data)
-
-
-if __name__ == '__main__':
-    FALSES = (False, (), None, '', 0)
-    TRUTHS = (True, (1,), '!', -5)
+def test_keep_truthful():
     assert list(keep_truthful(FALSES)) == [], (
         'All falsy values sholud be filtered out!'
     )
@@ -24,9 +12,15 @@ if __name__ == '__main__':
         'All truthful values sholud be keeped!'
     )
     assert list(keep_truthful([0, 1, 0])) == [1]
+
+
+def test_abs_sum():
     assert abs_sum([0]) == 0
     assert abs_sum((-42,)) == 42
     assert abs_sum([-3, -2, -1, 0, 1, 2, 3]) == 12  # noqa: WPS221
+
+
+def test_walk():
     city = {
         'Pine': {
             '5': 'School #42',
@@ -40,3 +34,4 @@ if __name__ == '__main__':
     assert walk(city, ['Pine', '5']) == city['Pine']['5']
     path = ['Elm', '13', '1']
     assert walk(city, path) == city['Elm']['13']['1']
+
