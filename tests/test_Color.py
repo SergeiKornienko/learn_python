@@ -1,4 +1,4 @@
-from classes.color import Color, rgb
+from classes.Color import Color, rgb
 
 
 def test_color_attributes():
